@@ -6,6 +6,7 @@ import SearchPage from "./components/SearchPage";
 import Coupleinfo from "./Components/Coupleinfo";
 import CalendarComp from "./components/CalendarComp";
 import ToDo from "./components/Todo";
+import FavouriteList from "./components/FavouriteList";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,8 @@ function App() {
         <SearchPage />
       ) : fakePageState === 4 ? (
         <ToDo />
+      ) : fakePageState === 5 ? (
+        <FavouriteList />
       ) : (
         <></>
       )}
