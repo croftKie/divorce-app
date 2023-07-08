@@ -20,8 +20,8 @@ const CalendarComp = ({ setPageState, setCurrentId }) => {
         id: 101,
         date: date,
         name: nameRef.current.value,
-        person_one: nameRef1.current.value,
-        person_two: nameRef2.current.value,
+        person: nameRef1.current.value,
+        description: nameRef2.current.value,
       })
     );
   };
@@ -45,10 +45,10 @@ const CalendarComp = ({ setPageState, setCurrentId }) => {
             <input ref={nameRef} type="text" placeholder="name of event" />
           </div>
           <div>
-            <input ref={nameRef1} type="text" placeholder="name of person1" />
+            <input ref={nameRef1} type="text" placeholder="Person" />
           </div>
           <div>
-            <input ref={nameRef2} type="text" placeholder="name of person2" />
+            <input ref={nameRef2} type="text" placeholder="Event Description" />
           </div>
         </div>
         <Calendar
@@ -65,9 +65,6 @@ const CalendarComp = ({ setPageState, setCurrentId }) => {
             }}
           >
             Submit
-          </button>
-          <button onClick={getEventID} className="go">
-            GO
           </button>
         </div>
       </div>

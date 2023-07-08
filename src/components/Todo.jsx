@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActionToDo, selectActionToDo } from "../store/features/todoSlice";
+import { eventSelector } from "../store/features/eventSlice";
 
 const ToDo = ({ currentId }) => {
   const dispatch = useDispatch();
   const [action, setAction] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [importance, setImportance] = useState("");
+  const events = useSelector(eventSelector);
 
   const actiontodo = useSelector(selectActionToDo);
   const handleActionChange = (e) => {
     setAction(e.target.value);
-    // console.log(e);
-    // dispatch(setActionToDo({ actiontodo: e.target.value }));
   };
   const handleDueDateChange = (e) => {
     setDueDate(e.target.value);
@@ -21,23 +21,7 @@ const ToDo = ({ currentId }) => {
     setImportance(e.target.value);
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform necessary actions with the form data
-    console.log("Action:", action);
-    console.log("Due Date:", dueDate);
-    console.log("Importance:", importance);
-    // Reset form inputs
-    dispatch(
-      setActionToDo({
-        actiontodo: action,
-        dueDate: dueDate,
-        important: importance,
-        eventid: currentId,
-      })
-    );
     setToStorage();
-    setDueDate("");
-    setImportance("");
   };
   const setToStorage = () => {
     localStorage.setItem("todos", JSON.stringify(actiontodo));

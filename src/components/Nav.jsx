@@ -1,9 +1,16 @@
 import React from "react";
 import logo from "../assets/LOGO1.svg";
-const Nav = () => {
+const Nav = ({ setPageState }) => {
   return (
     <div className="nav">
-      <img className="logo" src={logo} alt="divorce-app-logo"></img>
+      <img
+        onClick={() => {
+          setPageState(1);
+        }}
+        className="logo"
+        src={logo}
+        alt="divorce-app-logo"
+      ></img>
     </div>
   );
 };

@@ -8,58 +8,43 @@ import CalendarComp from "./components/CalendarComp";
 import ToDo from "./components/Todo";
 import FavouriteList from "./components/FavouriteList";
 import Nav from "./components/Nav";
+import { eventSelector } from "./store/features/eventSlice";
+import { useSelector } from "react-redux";
 
 function App() {
   const [count, setCount] = useState(0);
   const [fakePageState, setPageState] = useState(1);
   const [currentId, setCurrentId] = useState();
+  const events = useSelector(eventSelector);
 
   catFilter();
   return (
     <>
-      <Nav />
+      <Nav setPageState={setPageState} />
       {fakePageState === 1 ? (
         <CalendarComp setPageState={setPageState} setCurrentId={setCurrentId} />
-      ) : fakePageState === 2 ? (
-        <Coupleinfo currentId={currentId} />
       ) : fakePageState === 3 ? (
         <SearchPage currentId={currentId} />
       ) : fakePageState === 4 ? (
         <ToDo currentId={currentId} />
-      ) : fakePageState === 5 ? (
-        <FavouriteList currentId={currentId} />
       ) : (
         <></>
       )}
 
-      <div>
+      <div className="bottom-nav">
         <button
           onClick={() => {
-            setPageState(2);
+            setPageState(4);
           }}
         >
-          couples
+          Events
         </button>
         <button
           onClick={() => {
             setPageState(3);
           }}
         >
-          search
-        </button>
-        <button
-          onClick={() => {
-            setPageState(4);
-          }}
-        >
-          todo
-        </button>
-        <button
-          onClick={() => {
-            setPageState(5);
-          }}
-        >
-          favouritess
+          Shopping
         </button>
       </div>
     </>
