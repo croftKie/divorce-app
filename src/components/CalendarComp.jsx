@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-​
+
 const CalendarComp = () => {
   const [value, onChange] = useState(new Date());
-​
+
   const onClickDay = () => {
     console.log("hello");
   };
@@ -43,5 +43,5 @@ const CalendarComp = () => {
     </>
   );
 };
-​
+
 export default CalendarComp;

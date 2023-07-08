@@ -1,14 +1,14 @@
 import React, { component } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./Coupleinfo.css";
+import "../css/coupleinfo.css";
 const Coupleinfo = () => {
   const dispatch = useDispatch();
-​
+
   const onInput = async (e) => {
     dispatch(setSearch(e.target.value));
   };
-​
+
   return (
     <>
       <section className="coupleMain">
@@ -41,5 +41,5 @@ const Coupleinfo = () => {
     </>
   );
 };
-​
+
 export default Coupleinfo;
