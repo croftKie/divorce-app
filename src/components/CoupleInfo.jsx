@@ -26,9 +26,9 @@ const Coupleinfo = () => {
       <div className="reminderContainer"></div>
       <div className="buttonContainer">
         <button className="calendar">Calendar</button>
-        <button className="giftIdeas">giftIdeas</button>
-        <button className="favourites">Favourites</button>
-        <button className="dateIdeas">Date Ideas</button>
+        <button className="favouriteIdeas">favouriteIdeas</button>
+
+        <button className="toDo">ToDo</button>
       </div>
       <div className="searchContainer">
         <input
