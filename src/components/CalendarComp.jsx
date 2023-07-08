@@ -4,6 +4,7 @@ import Calendar from "react-calendar";
 import { eventSelector, addEvent } from "../store/features/eventSlice";
 import "react-calendar/dist/Calendar.css";
 import "../css/calendar.css";
+import submit from "../assets/submit.svg";
 
 const CalendarComp = ({ setPageState, setCurrentId }) => {
   const [value, onChange] = useState(new Date());
@@ -64,7 +65,7 @@ const CalendarComp = ({ setPageState, setCurrentId }) => {
               onClickDay(clickedDate);
             }}
           >
-            Submit
+            <img src={submit} alt="" />
           </button>
         </div>
       </div>

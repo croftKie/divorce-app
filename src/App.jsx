@@ -10,6 +10,8 @@ import FavouriteList from "./components/FavouriteList";
 import Nav from "./components/Nav";
 import { eventSelector } from "./store/features/eventSlice";
 import { useSelector } from "react-redux";
+import shopping from "./assets/shopping.svg";
+import event from "./assets/event.svg";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,14 +39,14 @@ function App() {
             setPageState(4);
           }}
         >
-          Events
+          <img src={event} alt="" />
         </button>
         <button
           onClick={() => {
             setPageState(3);
           }}
         >
-          Shopping
+          <img src={shopping} alt="" />
         </button>
       </div>
     </>

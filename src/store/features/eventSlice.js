@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  events: [],
+  events: JSON.parse(localStorage.getItem("todos")) || [],
 };
 
 const eventSlice = createSlice({
@@ -10,6 +10,10 @@ const eventSlice = createSlice({
   reducers: {
     addEvent: (state, action) => {
       state.events.push(action.payload);
+      localStorage.setItem(
+        "todos",
+        JSON.stringify([...state.events, action.payload])
+      );
     },
   },
 });

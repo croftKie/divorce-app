@@ -20,9 +20,8 @@ export async function getData(id) {
     },
   };
   try {
-    // const response = await axios.request(options);
-    // console.log(response.data);
-    return "hi";
+    const { data } = await axios.request(options);
+    return data;
   } catch (error) {
     console.error(error);
   }

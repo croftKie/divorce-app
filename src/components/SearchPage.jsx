@@ -6,23 +6,24 @@ import { products } from "../utils/productsFake";
 
 const SearchPage = () => {
   const selectRef = useRef();
-  const [data, setData] = useState();
+  const [data, setData] = useState({ products: [] });
 
-  const getCatData = (value) => {
+  const getCatData = async (value) => {
     const filtered = categories.filter((category) => {
       return category.brand === value;
     });
-    console.log(getData(filtered[0].id));
+    const data = await getData(filtered[0].id);
+    setData({ products: data.products });
   };
 
   const filterSearch = (value) => {
-    const copy = products;
-    copy.filter((item) => {
+    const copy = data;
+    const filtered = copy.products.filter((item) => {
       return item.name.includes(value);
     });
-    console.log(copy);
+    setData({ products: filtered });
   };
-
+  console.log(data);
   return (
     <div className="search-page">
       <div className="logo">
@@ -48,20 +49,16 @@ const SearchPage = () => {
                 filterSearch(e.target.value);
               }}
               type="text"
+              placeholder="look for a product"
             />
-            <button>Search</button>
           </form>
         </div>
         <div className="listings">
-          {products.map((product) => {
+          {data.products.map((product) => {
             return (
               <div className="card">
-                <img src={product.imageUrl} alt="" />
-                <div className="text">
-                  <h3>{product.name}</h3>
-                  <h4>{product.price.current.text}</h4>
-                </div>
-                <button>Favourite</button>
+                <h3>{product.name}</h3>
+                <h4>{product.price.current.text}</h4>
               </div>
             );
           })}
