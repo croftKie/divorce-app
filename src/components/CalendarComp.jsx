@@ -4,19 +4,17 @@ import Calendar from "react-calendar";
 const CalendarComp = () => {
   const [value, onChange] = useState(new Date());
 
-  const onClickDay = () => {
-    console.log("hello");
-  };
+  const onClickDay = () => {};
   return (
     <>
       <div>
         <Calendar onClickDay={onClickDay} value={value} />
         <form>
           <div>
-            <input type="text" />
+            <input type="text" placeholder="name of event" />
           </div>
           <div>
-            <select>
+            <select placeholder="month">
               <option></option>
               <option>January</option>
               <option>February</option>
@@ -33,18 +31,12 @@ const CalendarComp = () => {
             </select>
           </div>
           <div>
-            <input type="number" />
+            <input placeholder="day" type="number" />
           </div>
           <div>
             <button>Submit</button>
           </div>
         </form>
-        <div>
-          <button>couples</button>
-          <button>search</button>
-          <button>todo</button>
-          <button>favouritess</button>
-        </div>
       </div>
     </>
   );
