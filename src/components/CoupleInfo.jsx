@@ -1,24 +1,25 @@
 import React, { component } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { eventSelector } from "../store/features/eventSlice";
 import "../css/coupleinfo.css";
-const Coupleinfo = () => {
+const Coupleinfo = ({ currentId }) => {
   const dispatch = useDispatch();
-
-  const onInput = async (e) => {
-    dispatch(setSearch(e.target.value));
-  };
+  const events = useSelector(eventSelector);
+  const selectedEvent = events.filter((event) => {
+    return event.id === currentId;
+  });
 
   return (
     <>
       <section className="coupleMain">
         <div className="personIcon">
-          <p>Name</p>
+          <p>{selectedEvent[0].person_one}</p>
           <img></img>
           <input></input>
         </div>
         <div className="personIcon">
-          <p>Name2</p>
+          <p>{selectedEvent[0].person_two}</p>
           <img></img>
           <input></input>
         </div>
@@ -29,14 +30,6 @@ const Coupleinfo = () => {
         <button className="favouriteIdeas">favouriteIdeas</button>
 
         <button className="toDo">ToDo</button>
-      </div>
-      <div className="searchContainer">
-        <input
-          id="search"
-          onInput={onInput}
-          type="text"
-          placeholder="search..."
-        />
       </div>
     </>
   );

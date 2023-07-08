@@ -10,20 +10,22 @@ import FavouriteList from "./components/FavouriteList";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [fakePageState, setFakePageState] = useState(1);
+  const [fakePageState, setPageState] = useState(1);
+  const [currentId, setCurrentId] = useState();
+
   catFilter();
   return (
     <>
       {fakePageState === 1 ? (
-        <CalendarComp />
+        <CalendarComp setPageState={setPageState} setCurrentId={setCurrentId} />
       ) : fakePageState === 2 ? (
-        <Coupleinfo />
+        <Coupleinfo currentId={currentId} />
       ) : fakePageState === 3 ? (
-        <SearchPage />
+        <SearchPage currentId={currentId} />
       ) : fakePageState === 4 ? (
-        <ToDo />
+        <ToDo currentId={currentId} />
       ) : fakePageState === 5 ? (
-        <FavouriteList />
+        <FavouriteList currentId={currentId} />
       ) : (
         <></>
       )}
@@ -31,28 +33,28 @@ function App() {
       <div>
         <button
           onClick={() => {
-            setFakePageState(2);
+            setPageState(2);
           }}
         >
           couples
         </button>
         <button
           onClick={() => {
-            setFakePageState(3);
+            setPageState(3);
           }}
         >
           search
         </button>
         <button
           onClick={() => {
-            setFakePageState(4);
+            setPageState(4);
           }}
         >
           todo
         </button>
         <button
           onClick={() => {
-            setFakePageState(5);
+            setPageState(5);
           }}
         >
           favouritess
