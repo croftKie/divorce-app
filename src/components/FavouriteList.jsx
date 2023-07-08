@@ -9,7 +9,7 @@ const FavouriteList = () => {
       {/* <div></div> */}
       <div className="giftideas">
         <button
-          style={{ color: liked ? "white" : "red" }}
+          style={{ color: liked ? "white" : "pink" }}
           onClick={() => setLiked(!liked)}
         >
           &#10084;
