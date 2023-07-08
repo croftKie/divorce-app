@@ -1,0 +1,23 @@
+section.coupleMain {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+  background-color: blueviolet;
+  visibility: visible;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+​ .personIcon {
+  background-color: blueviolet;
+  width: 30%;
+  padding: 10px;
+}
+​ .buttonContainer {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin: 20px;
+}
+​ .buttonContainer button {
+  border: 1px solid blue;
+}

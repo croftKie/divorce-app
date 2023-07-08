@@ -3,6 +3,7 @@ import "./App.css";
 import { getData } from "./utils/fetchData";
 import { catFilter } from "./utils/catFilter";
 import SearchPage from "./components/SearchPage";
+import Coupleinfo from "./Components/Coupleinfo";
 
 function App() {
   const [count, setCount] = useState(0);
