@@ -1,10 +1,18 @@
 import React, { useState } from "react";
-const ToDo = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { setActionToDo, selectActionToDo } from "../store/features/todoSlice";
+
+const ToDo = ({ currentId }) => {
+  const dispatch = useDispatch();
   const [action, setAction] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [importance, setImportance] = useState("");
+
+  const actiontodo = useSelector(selectActionToDo);
   const handleActionChange = (e) => {
     setAction(e.target.value);
+    // console.log(e);
+    // dispatch(setActionToDo({ actiontodo: e.target.value }));
   };
   const handleDueDateChange = (e) => {
     setDueDate(e.target.value);
@@ -19,9 +27,20 @@ const ToDo = () => {
     console.log("Due Date:", dueDate);
     console.log("Importance:", importance);
     // Reset form inputs
-    setAction("");
+    dispatch(
+      setActionToDo({
+        actiontodo: action,
+        dueDate: dueDate,
+        important: importance,
+        eventid: currentId,
+      })
+    );
+    setToStorage();
     setDueDate("");
     setImportance("");
+  };
+  const setToStorage = () => {
+    localStorage.setItem("todos", JSON.stringify(actiontodo));
   };
   return (
     <>
@@ -47,6 +66,17 @@ const ToDo = () => {
           </select>
           <button type="submit">Add Todo</button>
         </form>
+      </div>
+      <div className="toDoListContainer">
+        {actiontodo.map((action) => {
+          return (
+            <div className="card">
+              <p>{action.actiontodo}</p>
+              <p>{action.dueDate}</p>
+              <p>{action.important}</p>
+            </div>
+          );
+        })}
       </div>
     </>
   );

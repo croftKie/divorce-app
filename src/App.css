@@ -5,6 +5,25 @@
   text-align: center;
   height: 100vh;
   width: 100vw;
+
+  --background: #fefefe;
+  --text-primary: #1a3d94;
+  --accent: #e5afc4;
+  --border-width: 2px;
+  --border-color: #1a3d94;
+  --shadow-color: #1a3d94;
+}
+
+@font-face {
+  font-family: "Quicksand", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+}
+
+h1,
+h2,
+p {
+  font-family: "Quicksand", sans-serif;
+  color: var(--text-primary);
 }
 
 .search-page {
@@ -15,11 +34,13 @@
 }
 
 .logo {
-  background-color: pink;
+  width: 150px;
 }
 
 .nav {
-  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -30,4 +51,23 @@
 
 .card > button {
   height: 20%;
+}
+
+button {
+  display: inline-flex;
+  padding: 12px 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 1em;
+
+  /* blue button  */
+  border-radius: 5px;
+  border: 2px solid #1a3d94;
+  background: rgba(195, 212, 255, 0.42);
+}
+
+button.pink {
+  border: 2px solid #e5afc4;
+  background: rgba(229, 175, 196, 0.5);
 }

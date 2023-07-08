@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  min-height: 100vh;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.form div {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.form div input {
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+.buttons button {
+  padding: 12px 22px;
+}
+
+.react-calendar {
+  width: 80% !important;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}/*# sourceMappingURL=App.css.map */

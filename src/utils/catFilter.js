@@ -12,5 +12,4 @@ export function catFilter() {
       });
     });
   });
-  console.log(categories);
 }

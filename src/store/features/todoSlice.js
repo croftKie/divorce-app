@@ -1,11 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+const initialState = {
+  actiontodo: JSON.parse(localStorage.getItem("todos")) || [],
+};
 
 const todoSlice = createSlice({
   name: "todo",
   initialState,
-  reducers: {},
+  reducers: {
+    setActionToDo: (state, action) => {
+      state.actiontodo.push(action.payload);
+      // console.log(actiontodo);
+    },
+  },
 });
+
+export const { setActionToDo } = todoSlice.actions;
+
+export const selectActionToDo = (state) => state.todo.actiontodo;
 
 export default todoSlice.reducer;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./css/App.css";
 import { getData } from "./utils/fetchData";
 import { catFilter } from "./utils/catFilter";
 import SearchPage from "./components/SearchPage";
@@ -7,6 +7,7 @@ import Coupleinfo from "./Components/Coupleinfo";
 import CalendarComp from "./components/CalendarComp";
 import ToDo from "./components/Todo";
 import FavouriteList from "./components/FavouriteList";
+import Nav from "./components/Nav";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ function App() {
   catFilter();
   return (
     <>
+      <Nav />
       {fakePageState === 1 ? (
         <CalendarComp setPageState={setPageState} setCurrentId={setCurrentId} />
       ) : fakePageState === 2 ? (

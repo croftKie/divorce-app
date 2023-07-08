@@ -1,0 +1,36 @@
+.calendarContainer {
+  background-color: rgb(231, 156, 203);
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 0 10px;
+}
+
+.inputContainer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.inputBox {
+  width: 90%;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.inputBox input {
+  width: 60%;
+}
+
+.buttonSubmit button {
+  padding: 12px 22px;
+}
+
+.calendarContainer {
+  width: 90%;
+}
+
+.buttonGo button {
+  padding: 12px 22px;
+}

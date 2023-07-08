@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Calendar from "react-calendar";
 import { eventSelector, addEvent } from "../store/features/eventSlice";
+import "react-calendar/dist/Calendar.css";
+import "../css/calendar.css";
 
 const CalendarComp = ({ setPageState, setCurrentId }) => {
   const [value, onChange] = useState(new Date());
@@ -37,17 +39,26 @@ const CalendarComp = ({ setPageState, setCurrentId }) => {
 
   return (
     <>
-      <div>
-        <div>
-          <input ref={nameRef} type="text" placeholder="name of event" />
+      <div className="content">
+        <div className="form">
+          <div>
+            <input ref={nameRef} type="text" placeholder="name of event" />
+          </div>
+          <div>
+            <input ref={nameRef1} type="text" placeholder="name of person1" />
+          </div>
+          <div>
+            <input ref={nameRef2} type="text" placeholder="name of person2" />
+          </div>
         </div>
-        <div>
-          <input ref={nameRef1} type="text" placeholder="name of person1" />
-        </div>
-        <div>
-          <input ref={nameRef2} type="text" placeholder="name of person2" />
-        </div>
-        <div>
+        <Calendar
+          id={"react-calendar"}
+          onClickDay={(date) => {
+            setClickedDate(JSON.stringify(date).slice(1, 11));
+          }}
+          value={value}
+        />
+        <div className="buttons">
           <button
             onClick={() => {
               onClickDay(clickedDate);
@@ -55,16 +66,10 @@ const CalendarComp = ({ setPageState, setCurrentId }) => {
           >
             Submit
           </button>
+          <button onClick={getEventID} className="go">
+            GO
+          </button>
         </div>
-        <Calendar
-          onClickDay={(date) => {
-            setClickedDate(JSON.stringify(date).slice(1, 11));
-          }}
-          value={value}
-        />
-        <button onClick={getEventID} className="go">
-          GO
-        </button>
       </div>
     </>
   );
