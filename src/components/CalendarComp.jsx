@@ -39,6 +39,12 @@ const CalendarComp = () => {
             <button>Submit</button>
           </div>
         </form>
+        <div>
+          <button>couples</button>
+          <button>search</button>
+          <button>todo</button>
+          <button>favouritess</button>
+        </div>
       </div>
     </>
   );
