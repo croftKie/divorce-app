@@ -65,6 +65,7 @@ const CalendarComp = ({ setPageState, setCurrentId }) => {
               onClickDay(clickedDate);
             }}
           >
+            <p>add date</p>
             <img src={submit} alt="" />
           </button>
         </div>

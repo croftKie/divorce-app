@@ -39,6 +39,7 @@ function App() {
             setPageState(4);
           }}
         >
+          <p>dates list</p>
           <img src={event} alt="" />
         </button>
         <button
@@ -46,6 +47,7 @@ function App() {
             setPageState(3);
           }}
         >
+          <p>gift ideas</p>
           <img src={shopping} alt="" />
         </button>
       </div>
