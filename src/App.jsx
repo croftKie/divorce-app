@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./css/App.css";
+
 import { getData } from "./utils/fetchData";
 import { catFilter } from "./utils/catFilter";
 import SearchPage from "./components/SearchPage";

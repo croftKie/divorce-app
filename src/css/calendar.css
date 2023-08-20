@@ -1,36 +1,47 @@
-/* .calendarContainer {
-  background-color: rgb(231, 156, 203);
-  margin: 0 auto;
-  width: 90%;
+.react-calendar {
+  width: 80% !important;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px 0 10px;
+  align-content: center;
+  border-radius: 5px;
+  border: 1px solid rgba(26, 61, 148, 0.4) !important;
+  background: linear-gradient(
+    138deg,
+    #fff 0%,
+    rgba(255, 255, 255, 0.49) 50.98%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  box-shadow: 4px 4px 10px 0px rgba(26, 61, 148, 0.44);
 }
 
-.inputContainer {
-  width: 90%;
-  margin: 0 auto;
+button.react-calendar__navigation__arrow,
+button.react-calendar__navigation__label {
+  color: #1a3d94;
 }
 
-.inputBox {
-  width: 90%;
-  margin: 0 auto;
-  padding: 12px 20px;
+button.react-calendar__tile:enabled:hover,
+button.react-calendar__tile:enabled:focus {
+  background-color: rgba(195, 212, 255, 0.4196078431) !important;
 }
 
-.inputBox input {
-  width: 60%;
+button.react-calendar__month-view__days__day--weekend {
+  color: #f268ec;
 }
 
-.buttonSubmit button {
-  padding: 12px 22px;
+button.react-calendar__month-view__days__day--neighboringMonth {
+  color: #eed7ed;
 }
 
-.calendarContainer {
-  width: 90%;
+button.react-calendar__month-view__days__day:not(
+    button.react-calendar__month-view__days__day--weekend
+  )
+  abbr {
+  color: #1a3d94;
 }
 
-.buttonGo button {
-  padding: 12px 22px;
-} */
+.react-calendar__month-view__weekdays abbr {
+  color: #1a3d94;
+  font-weight: bolder;
+}
